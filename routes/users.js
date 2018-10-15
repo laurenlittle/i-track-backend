@@ -6,7 +6,12 @@ const UserModel = require('../models/user-model.js');
 /* POST new user */
 router.post('/api/signup', (req, res, next) => {
   UserModel.findOne({
-      lastName: req.body.signUpLastName
+      // title: req.body.signUpTitle,
+      // firstName: req.body.signUpFirstName,
+      // lastName: req.body.signUpLastName,
+      // email: req.body.signUpEmail,
+      userName: req.body.signUpUserName
+      // password: req.body.signUpPassword
     },
     (err, currentUser) => {
       if (err) {
@@ -24,11 +29,12 @@ router.post('/api/signup', (req, res, next) => {
 
       // Otherwise save new user
       const newUser = new UserModel({
-        // firstName: req.body.signUpFirstName,
-        lastName: req.body.signUpLastName
-        // email: req.body.signUpEmail,
-        // userName: req.body.signUpUserName,
-        // password: req.body.signUpPassword
+        title: req.body.signUpTitle,
+        firstName: req.body.signUpFirstName,
+        lastName: req.body.signUpLastName,
+        email: req.body.signUpEmail,
+        userName: req.body.signUpUserName,
+        password: req.body.signUpPassword
       });
 
       newUser.save((err) => {

@@ -8,11 +8,11 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   title: {
     type: String,
-    // required: true
+    required: true
   },
   firstName: {
     type: String,
-    // required: [true, 'Please enter your email']
+    required: [true, 'Please enter your email']
   },
   lastName: {
     type: String,
@@ -20,15 +20,15 @@ const userSchema = new Schema({
   },
   email: {
     type: String,
-    // required: [true, 'Please enter your email']
+    required: [true, 'Please enter your email']
   },
   userName: {
     type: String,
-    // required: true
+    required: true
   },
   password: {
     type: String,
-    // required: true,
+    required: true,
     minlength: 8,
     maxlength: 20
   },
