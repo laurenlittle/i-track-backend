@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Require additional Models
-// const userModel = require('./user-model');
+const userModel = require('./user-model');
 
 const Schema = mongoose.Schema;
 
@@ -17,8 +17,8 @@ const classSchema = new Schema({
 });
 
 const classModel = mongoose.model('Class', classSchema);
-// Collection name
-// User -> users -> db.users.find()
+                                    // Collection name
+// Class -> classes -> db.classes.find()
 
 module.exports = classModel;
 // Connects the  model above to the routes file

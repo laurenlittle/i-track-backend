@@ -42,7 +42,6 @@ const userSchema = new Schema({
   classesTaught: {
     type: Number
   }
-  // class: ClassModel.schema
 }, {
   timestamps: true
 });
